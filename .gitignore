@@ -125,3 +125,5 @@ dist
 # End of https://www.toptal.com/developers/gitignore/api/node
 # dependencies
 node_modules
+package-lock.json
+package.json
