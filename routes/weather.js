@@ -1,5 +1,6 @@
 const router = require('express').Router()
 const fetch = require('node-fetch')
+require('dotenv').config()
 router.get('/', (req, res) => {
     res.render('index', {
         city: null,
@@ -38,7 +39,7 @@ router.get('/', (req, res) => {
 
 router.post('/', async (req, res) => {
     const city = req.body.city;
-    const url_api = 'https://api.openweathermap.org/data/2.5/forecast?q=' + city + '&units=metric&appid=914c27f8624c6c3cd5d8c776ecf4d910'
+    const url_api = 'https://api.openweathermap.org/data/2.5/forecast?q=' + city + '&units=metric&appid=' + process.env.API_KEY + ''
 
     try {
         await fetch(url_api)
