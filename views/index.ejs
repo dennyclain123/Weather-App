@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="\css\style.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+</head>
+
+<body>
+    <div id="main-content">
+        <div id="left-side">
+            <div id="search-bar">
+                <form action="/" method="POST">
+                    <input type="text" name="city" placeholder="Enter a city">
+                </form>
+            </div>
+            <div id="image">
+                <% if(icon !==null) {%>
+                    <img src="http://openweathermap.org/img/w/<%= icon %>.png" alt="" width="150px"
+                        height="150px">
+                    <% } %>
+            </div>
+            <div id="Temperature">
+                <% if(temp !==null) {%>
+                    <h2>
+                        <%= temp %>
+                    </h2>
+                    <% } %>
+                        <h3>°C</h3>
+            </div>
+            <div id="sarthar">
+                <p>Today's Date - </p>
+                <p id="demo"></p>
+
+                <script>
+                    var today = new Date();
+                    var dd = today.getDate();
+                    var mm = today.getMonth() + 1;
+
+                    var yyyy = today.getFullYear();
+                    if (dd < 10) {
+                        dd = '0' + dd;
+                    }
+                    if (mm < 10) {
+                        mm = '0' + mm;
+                    }
+                    var today = dd + '/' + mm + '/' + yyyy;
+                    document.getElementById("demo").innerHTML = today;
+                </script>
+
+            </div>
+            <div id="hr">
+
+            </div>
+            <div id="cloudy">
+                <!-- <i class="fa fa-cloud" aria-hidden="true" id="cloud"></i> -->
+                <img src="https://image.flaticon.com/icons/png/128/2932/2932445.png" alt="" width="25px" height="25px"
+                    id="cloud">
+                <% if(des !==null) {%>
+                    <p class="mostly-cloudy">
+                        <%= des %>
+                    </p>
+                    <% } %>
+            </div>
+            <div id="rain">
+                <i class="fa fa-tint" aria-hidden="true" id="rain-icon"></i>
+                <% if(humidity !==null) {%>
+                    <p id="raining">Humidity - <%= humidity %> % </p>
+                    <% } %>
+            </div>
+            <div id="footer-image">
+                <div class="centered">Yangon, Myanmar</div>
+                <img src="https://i.pinimg.com/originals/82/71/1c/82711cb32fe89dc2911da14d1c506f72.jpg" width="300px"
+                    height="150px">
+            </div>
+        </div>
+        <div id="right-side">
+            <div id="top-pane">
+                <div id="top-pane-left">
+                    <% if(city !==null) {%>
+                        Location - <%= city %>, <%= country %>
+                                <% } %>
+                </div>
+                <div id="top-pane-right">
+                    Developed By <img src="https://www.w3schools.com/howto/img_avatar.png" alt="">
+                </div>
+            </div>
+            <div id="week">
+                <div class="day">
+                    <center>
+                        <p>1st Day (Today)</p>
+                    </center>
+                    <center>
+                        <% if(first_day_icon !==null) {%>
+                            <img class="icon" src="http://openweathermap.org/img/w/<%= first_day_icon %>.png" alt=''>
+                            <% } %>
+                    </center>
+                    <center>
+                        <% if(first_day_temp !==null) {%>
+                            <p>
+                                <%= first_day_temp %>°C
+                            </p>
+                            <% } %>
+
+                    </center>
+                </div>
+                <div class="day">
+                    <center>
+                        <p>2nd Day</p>
+                    </center>
+                    <center>
+                        <% if(second_day_icon !==null) {%>
+                            <img class="icon" src="http://openweathermap.org/img/w/<%= second_day_icon %>.png" alt=''>
+                            <% } %>
+                    </center>
+                    <center>
+                        <% if(second_day_temp !==null) {%>
+                            <p>
+                                <%= second_day_temp %>°C
+                            </p>
+                            <% } %>
+                    </center>
+                </div>
+                <div class="day">
+                    <center>
+                        <p>3rd Day</p>
+                    </center>
+                    <center>
+                        <% if(third_day_icon !==null) {%>
+                            <img class="icon" src="http://openweathermap.org/img/w/<%= third_day_icon %>.png" alt=''>
+                            <% } %>
+                    </center>
+                    <center>
+                        <% if(third_day_temp !==null) {%>
+                            <p>
+                                <%= third_day_temp %>°C
+                            </p>
+                            <% } %>
+                    </center>
+                </div>
+                <div class="day">
+                    <center>
+                        <p>4th Day</p>
+                    </center>
+                    <center>
+                        <% if(fourth_day_icon !==null) {%>
+                            <img class="icon" src="http://openweathermap.org/img/w/<%= fourth_day_icon %>.png" alt=''>
+                            <% } %>
+                    </center>
+                    <center>
+                        <% if(fourth_day_temp !==null) {%>
+                            <p>
+                                <%= fourth_day_temp %>°C
+                            </p>
+                            <% } %>
+                    </center>
+                </div>
+                <div class="day">
+                    <center>
+                        <p>5th Day</p>
+                    </center>
+                    <center>
+                        <% if(fifth_day_icon !==null) {%>
+                            <img class="icon" src="http://openweathermap.org/img/w/<%= fifth_day_icon %>.png" alt=''>
+                            <% } %>
+                    </center>
+                    <center>
+                        <% if(fifth_day_temp !==null) {%>
+                            <p>
+                                <%= fifth_day_temp %>°C
+                            </p>
+                            <% } %>
+                    </center>
+                </div>
+                <div class="day">
+                    <center>
+                        <p>6th Day</p>
+                    </center>
+                    <center>
+                        <% if(sixth_day_icon !==null) {%>
+                            <img class="icon" src="http://openweathermap.org/img/w/<%= sixth_day_icon %>.png" alt=''>
+                            <% } %>
+                    </center>
+                    <center>
+                        <% if(sixth_day_temp !==null) {%>
+                            <p>
+                                <%= sixth_day_temp %>°C
+                            </p>
+                            <% } %>
+                    </center>
+                </div>
+                <div class="day">
+                    <center>
+                        <p>7th Day</p>
+                    </center>
+                    <center>
+                        <% if(seventh_day_icon !==null) {%>
+                            <img class="icon" src="http://openweathermap.org/img/w/<%= seventh_day_icon %>.png" alt=''>
+                            <% } %>
+                    </center>
+                    <center>
+                        <% if(seventh_day_temp !==null) {%>
+                            <p>
+                                <%= seventh_day_temp %>°C
+                            </p>
+                            <% } %>
+                    </center>
+                </div>
+            </div>
+            <div id="highlight">
+                Today's Highlights
+            </div>
+            <!-- First Row -->
+            <div id="first-row">
+                <div id="first-first">
+                    <div id="temp-min-max">
+                        <center>
+                            <p> Current Temperature </p>
+                        </center>
+                        <div id="feels-like">
+                            <img src="https://image.flaticon.com/icons/png/128/219/219817.png" alt="" width="20px"
+                                height="20px">
+                            <!-- <i class="fa fa-thermometer-three-quarters" aria-hidden="true"></i> -->
+                            <p>Feels Like - <% if(feels_like !==null) {%>
+                                    <span>
+                                        <%= feels_like %>
+                                    </span>
+                                    <% } %> <span>°C</span></p>
+                        </div>
+                        <div id="minimum">
+                            <img src="https://image.flaticon.com/icons/png/128/219/219817.png" alt="" width="20px"
+                                height="20px">
+                            <p>Temp_min - <% if(temp_min !==null) {%>
+                                    <span>
+                                        <%= temp_min %>
+                                    </span>
+                                    <% } %> <span>°C</span></p>
+                        </div>
+                        <div id="maximum">
+                            <img src="https://image.flaticon.com/icons/png/128/219/219817.png" alt="" width="20px"
+                                height="20px">
+                            <p>Temp_max - <% if(temp_max !==null) {%>
+                                    <span>
+                                        <%= temp_max %>
+                                    </span>
+                                    <% } %> <span>°C</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div id="second-first">
+                    <center>
+                        <div id="wind-status">
+                            <p> Wind Status </p>
+                            <div id="wind-speed">
+                                <% if(wind_speed !==null) {%>
+                                    <h1>
+                                        <%= wind_speed %> <span>mph</span>
+                                    </h1>
+                                    <% } %>
+                            </div>
+                            <div id="wind-direction">
+                                    <p>Degree -  <% if(wind_deg !==null) {%>
+                                        <%= wind_deg %>°
+                                    </p>
+                                    <% } %>
+                            </div>
+                        </div>
+                    </center>
+                </div>
+                <div id="third-first">
+                    <div id="weather-des">
+                        <center>
+                            <p>Today's Weather Description</p>
+                        </center>
+                        <div id="weather-condition">
+                            <img src="https://image.flaticon.com/icons/png/128/3314/3314019.png" alt="" width="20px"
+                                height="20px">
+
+                            
+                                <p>Condition - <% if(weather_condition !==null) {%>
+                                    <%= weather_condition %>
+                                </p>
+                                <% } %>
+                        </div>
+                        <div id="weather-full">
+                            <img src="https://image.flaticon.com/icons/png/128/3314/3314019.png" alt="" width="20px"
+                                height="20px">
+
+                            
+                                <p>Description -<% if(des !==null) {%> <%= des %>
+                                </p>
+                                <% } %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Second Row -->
+            <div id="second-row">
+                <div id="second-first">
+                    <center>
+                        <div id="pressure">
+                            <div id="pressure-img">
+                                <img src="https://image.flaticon.com/icons/png/128/556/556958.png" alt="" width="100px"
+                                    height="100px">
+                            </div>
+                            <div id="pressure-sts">
+                                    Pressure -  <% if(pressure !==null) {%>
+                                        <%= pressure %> PS
+                                 <% } %>
+                            </div>
+                        </div>
+                    </center>
+                </div>
+                <div id="second-second">
+                    <center>
+                        <div id="pressure">
+                            <div id="pressure-img">
+                                <img src="https://image.flaticon.com/icons/png/128/916/916979.png" alt="" width="100px"
+                                    height="100px">
+                            </div>
+                            <div id="pressure-sts">
+                                
+                                    Cloud Percentage - <% if(cloud_percent !==null) {%>
+                                        <%= cloud_percent %> %
+                                        <% } %>
+                            </div>
+                        </div>
+                    </center>
+                </div>
+                <div id="second-third">
+                    <div id="temp-min-max">
+                        <center>
+                            <p> Other Contents </p>
+                        </center>
+                        <div id="feels-like">
+                            <img src="https://image.flaticon.com/icons/png/128/833/833325.png" alt="" width="20px"
+                                height="20px">
+                            <!-- <i class="fa fa-thermometer-three-quarters" aria-hidden="true"></i> -->
+                            
+                                <p>Sea-Level - <% if(sea_level !==null) {%>
+                                    <%= sea_level %></p>
+                                    <% } %>
+                        </div>
+                        <div id="minimum">
+                            <img src="https://image.flaticon.com/icons/png/128/3533/3533610.png" alt="" width="20px"
+                                height="20px">
+                                
+                                    <p>Ground-level -<% if(grnd_level !==null) {%>
+                                         <%= grnd_level %></p>
+                                        <% } %>
+                        </div>
+                        <div id="maximum">
+                            <img src="https://image.flaticon.com/icons/png/128/633/633655.png" alt="" width="20px"
+                                height="20px">
+                                
+                                    <p>Visibility-Level -<% if(visibility !==null) {%>
+                                         <%= visibility %></p>
+                                        <% } %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>
